@@ -1,0 +1,14 @@
+.hero {
+    width: 100%;
+    aspect-ratio: 375 / 538;
+    background-image: url("../../assets/mobile/image-header.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 720px) {
+    .hero {
+        aspect-ratio: 1440 / 800;
+        background-image: url("../../assets/desktop/image-header.jpg");
+    }
+}

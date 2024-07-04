@@ -1,0 +1,251 @@
+/* ----------------------------------------------------------------------
+1. CSS reset
+2. Colors
+3. Typography
+   3.1 Headings
+   3.2 Paragraphs
+   3.3 Links
+       3.3.1 Header
+       3.3.2 Main
+       3.3.3 Footer
+4. Background
+---------------------------------------------------------------------- */
+
+/* 1. CSS reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* 2. Colors */
+
+:root {
+    --soft-red: hsl(7, 99%, 70%);
+    --yellow: hsl(51, 100%, 49%);
+    --dark-desaturated-cyan: hsl(167, 40%, 24%);
+    --dark-blue: hsl(198, 62%, 26%);
+    --dark-moderate-cyan: hsl(168, 34%, 41%);
+    --very-dark-desaturated-blue: hsl(212, 27%, 19%);
+    --very-dark-grayish-blue: hsl(213, 9%, 39%);
+    --dark-grayish-blue: hsl(232, 10%, 55%);
+    --grayish-blue: hsl(210, 4%, 67%);
+    --white: hsl(0, 0%, 100%);
+    --test: #458D7E;
+    /* to be removed later */
+}
+
+/* 3. Typography */
+
+html {
+    font-size: 16px;
+}
+
+/* 3.1 Headings */
+
+[class^="heading"] {
+    text-align: center;
+    font-family: "Fraunces", serif;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.heading-xl {
+    color: var(--white);
+    font-size: 2.5rem;
+    letter-spacing: 0.39063rem;
+    text-transform: uppercase;
+}
+
+/* 720px overgeslagen omdat de titel anders niet op een tablet past */
+@media screen and (min-width: 1440px) {
+    .heading-xl {
+        font-size: 3.5rem;
+        letter-spacing: 0.54688rem;
+    }
+}
+
+.heading-l {
+    color: var(--very-dark-desaturated-blue);
+    font-size: 2rem;
+    letter-spacing: -0.01431rem;
+}
+
+@media screen and (min-width: 720px) {
+    .heading-l {
+        text-align: left;
+        font-size: 2.5rem;
+        letter-spacing: -0.01788rem;
+    }
+}
+
+.heading-m {
+    color: var(--dark-desaturated-cyan);
+    /* andere kleur in ander artikel, nog definiëren */
+    font-size: 1.75rem;
+    letter-spacing: -0.0125rem;
+}
+
+.heading-s {
+    color: var(--grayish-blue);
+    font-size: 1rem;
+    letter-spacing: 0.25rem;
+}
+
+@media screen and (min-width: 720px) {
+    .heading-s {
+        font-size: 1.25rem;
+        letter-spacing: 0.3125rem;
+    }
+}
+
+/* 3.2 Paragraphs */
+
+[class^="paragraph"] {
+    text-align: center;
+    font-family: "Barlow", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.paragraph-usp-l {
+    color: var(----dark-grayish-blue);
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    letter-spacing: -0.00806rem;
+}
+
+@media screen and (min-width: 720px) {
+    .paragraph-usp-l {
+        text-align: left;
+    }
+}
+
+.paragraph-usp-s {
+    color: var(--dark-desaturated-cyan);
+    /* andere kleur in ander artikel, nog definiëren */
+    font-size: 1rem;
+    line-height: 1.6875rem;
+    letter-spacing: -0.00713rem;
+}
+
+.paragraph-testimonial {
+    color: var(--very-dark-grayish-blue);
+    font-size: 1.125rem;
+    line-height: 2rem;
+    letter-spacing: -0.00806rem;
+}
+
+/* 3.3 Links */
+
+[class^="link"] {
+    font-style: normal;
+    line-height: 1.5625rem;
+}
+
+@media screen and (min-width: 1440px) {
+    [class^="link"]:hover {
+        cursor: pointer;
+    }
+}
+
+/* 3.3.1 Header */
+
+.link-header {
+    color: var(--dark-grayish-blue);
+    font-family: "Barlow", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.00894rem;
+}
+
+/* 720px overgeslagen omdat de header anders niet op een tablet past */
+@media screen and (min-width: 1440px) {
+    .link-header {
+        color: var(--white);
+        font-size: 1.125rem;
+        letter-spacing: -0.00806rem;
+    }
+}
+
+.link-header-button {
+    color: var(--very-dark-desaturated-blue);
+    font-family: "Fraunces", serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: -0.00669rem;
+    text-transform: uppercase;
+}
+
+/* 720px overgeslagen omdat de header anders niet op een tablet past */
+@media screen and (min-width: 1440px) {
+    .link-header-button:hover {
+        color: var(--white);
+    }
+}
+
+/* 3.3.2 Main */
+
+.link-main {
+    color: var(--very-dark-desaturated-blue);
+    font-family: "Fraunces", serif;
+    font-size: 0.9375rem;
+    font-weight: 900;
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
+    /* Onderstrepingsstijl hier definiëren */
+}
+
+@media screen and (min-width: 1440px) {
+    .link-main:hover {
+        /* Hier onderstrepingsstijl definiëren die .link-main-yellow:hover en .link-main-red-hover: gemeenschappelijk hebben */
+    }
+}
+
+.link-main-yellow {
+    /* Hier onderstrepingsstijl definiëren voor zover afwijkend van .link-main */
+}
+
+@media screen and (min-width: 1440px) {
+    .link-main-yellow {
+        /* Hier onderstrepingsstijl voor :hover definiëren voor zover afwijkend van .link-main:hover */
+    }
+}
+
+.link-main-red {
+    /* Hier onderstrepingsstijl definiëren voor zover afwijkend van .link-main */
+}
+
+@media screen and (min-width: 1440px) {
+    .link-main-red {
+        /* Hier onderstrepingsstijl voor :hover definiëren voor zover afwijkend van .link-main:hover */
+    }
+}
+
+/* 3.3.3 Footer */
+
+.link-footer {
+    color: var(--dark-moderate-cyan);
+    font-family: "Barlow", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.00806rem;
+}
+
+@media screen and (min-width: 1440px) {
+    .link-footer:hover {
+        color: var(--white);
+    }
+}
+
+/* 4. Background */
+
+body {
+    min-height: 100vh;
+}
