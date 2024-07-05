@@ -1,14 +1,43 @@
+/* Section */
+
 .hero {
     width: 100%;
     aspect-ratio: 375 / 538;
     background-image: url("../../assets/mobile/image-header.jpg");
     background-size: contain;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media screen and (min-width: 720px) {
     .hero {
         aspect-ratio: 1440 / 800;
         background-image: url("../../assets/desktop/image-header.jpg");
+    }
+}
+
+/* Heading */
+
+.hero header {
+    margin-top: 144px;
+}
+
+@media screen and (min-width: 1440px) {
+    .hero header {
+        margin-top: 195px;
+    }
+}
+
+/* Image */
+
+.hero img {
+    margin-top: 52px;
+}
+
+@media screen and (min-width: 1440px) {
+    .hero img {
+        margin-top: 96.54px;
     }
 }

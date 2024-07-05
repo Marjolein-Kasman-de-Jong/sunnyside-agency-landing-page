@@ -3,7 +3,7 @@ import "./page-header.css";
 
 function PageHeader() {
     return (
-        <header>
+        <header className="page-header">
             header
         </header>
     );

@@ -7,6 +7,7 @@
    3.3 Links
        3.3.1 Header
        3.3.2 Main
+             3.3.2.1 Pseudo-classes
        3.3.3 Footer
 4. Background
 ---------------------------------------------------------------------- */
@@ -36,8 +37,9 @@ button {
     --dark-grayish-blue: hsl(232, 10%, 55%);
     --grayish-blue: hsl(210, 4%, 67%);
     --white: hsl(0, 0%, 100%);
-    --test: #458D7E;
     /* to be removed later */
+    --test: #19536C;
+
 }
 
 /* 3. Typography */
@@ -87,9 +89,12 @@ html {
 
 .heading-m {
     color: var(--dark-desaturated-cyan);
-    /* andere kleur in ander artikel, nog definiëren */
     font-size: 1.75rem;
     letter-spacing: -0.0125rem;
+}
+
+.usps section section:last-of-type article .heading-m {
+    color: var(--dark-blue);
 }
 
 .heading-s {
@@ -115,7 +120,7 @@ html {
 }
 
 .paragraph-usp-l {
-    color: var(----dark-grayish-blue);
+    color: var(--dark-grayish-blue);
     font-size: 1.125rem;
     line-height: 1.875rem;
     letter-spacing: -0.00806rem;
@@ -129,10 +134,13 @@ html {
 
 .paragraph-usp-s {
     color: var(--dark-desaturated-cyan);
-    /* andere kleur in ander artikel, nog definiëren */
     font-size: 1rem;
     line-height: 1.6875rem;
     letter-spacing: -0.00713rem;
+}
+
+.usps section section:last-of-type article p {
+    color: var(--dark-blue);
 }
 
 .paragraph-testimonial {
@@ -147,6 +155,7 @@ html {
 [class^="link"] {
     font-style: normal;
     line-height: 1.5625rem;
+    padding: 5px 15px 15px 15px;
 }
 
 @media screen and (min-width: 1440px) {
@@ -192,40 +201,51 @@ html {
 
 /* 3.3.2 Main */
 
-.link-main {
+[class^="link-main"] {
     color: var(--very-dark-desaturated-blue);
     font-family: "Fraunces", serif;
     font-size: 0.9375rem;
     font-weight: 900;
     letter-spacing: 0.0625rem;
     text-transform: uppercase;
-    /* Onderstrepingsstijl hier definiëren */
+    text-decoration: none;
+    position: relative;
 }
 
-@media screen and (min-width: 1440px) {
-    .link-main:hover {
-        /* Hier onderstrepingsstijl definiëren die .link-main-yellow:hover en .link-main-red-hover: gemeenschappelijk hebben */
-    }
+[class^="link-main"]::after {
+    content: "";
+    width: 137px;
+    height: 10px;
+    border-radius: 28px;
+    opacity: .25;
+    display: block;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
 }
 
-.link-main-yellow {
-    /* Hier onderstrepingsstijl definiëren voor zover afwijkend van .link-main */
+.link-main-yellow::after {
+    background-color: var(--yellow);
 }
 
-@media screen and (min-width: 1440px) {
-    .link-main-yellow {
-        /* Hier onderstrepingsstijl voor :hover definiëren voor zover afwijkend van .link-main:hover */
-    }
+.link-main-red::after {
+    background-color: var(--soft-red);
 }
 
-.link-main-red {
-    /* Hier onderstrepingsstijl definiëren voor zover afwijkend van .link-main */
+/* 3.3.2.1 Pseudo-classes */
+
+[class^="link-main"]:focus::after {
+    opacity: .25;
 }
 
-@media screen and (min-width: 1440px) {
-    .link-main-red {
-        /* Hier onderstrepingsstijl voor :hover definiëren voor zover afwijkend van .link-main:hover */
-    }
+[class^="link-main"]:hover::after {
+    opacity: 1;
+}
+
+[class^="link-main"]:active::after {
+    opacity: .25;
 }
 
 /* 3.3.3 Footer */

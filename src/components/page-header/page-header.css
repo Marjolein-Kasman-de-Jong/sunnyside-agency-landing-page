@@ -1,8 +1,6 @@
 /* temporary */
-header {
+.page-header {
     width: 100%;
     height: 82px;
-    border: 1px solid white;
-    background-color: transparent;
     position: fixed;
 }
