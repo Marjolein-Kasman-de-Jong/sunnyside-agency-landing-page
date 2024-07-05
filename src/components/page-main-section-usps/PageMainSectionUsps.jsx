@@ -2,7 +2,7 @@
 import usps from "../../constants/usps";
 
 // Components
-import Article from "../article/Article";
+import ArticleWithImage from "../article-with-image/ArticleWithImage";
 
 // Images
 import transformSmall from "../../assets/mobile/image-transform.jpg";
@@ -14,6 +14,25 @@ import designLarge from "../../assets/desktop/image-graphic-design.jpg";
 import photographySmall from "../../assets/mobile/image-photography.jpg";
 import photographyLarge from "../../assets/desktop/image-photography.jpg";
 
+const images = {
+    transform: {
+        small: transformSmall,
+        large: transformLarge,
+    },
+    standOut: {
+        small: standOutSmall,
+        large: standOutLarge,
+    },
+    design: {
+        small: designSmall,
+        large: designLarge,
+    },
+    photography: {
+        small: photographySmall,
+        large: photographyLarge,
+    },
+};
+
 // Styles
 import "./page-main-section-usps.css";
 
@@ -21,36 +40,28 @@ function PageMainSectionUsps() {
     return (
         <section className="usps">
             <section className="text-outside">
-                <section>
-                    <picture>
-                        <source media="(min-width: 720px)" srcSet={transformLarge} />
-                        <img src={transformSmall} alt="Egg on a yellow background" />
-                    </picture>
-                    <Article type="usp" content={usps[0]} />
-                </section>
-                <section>
-                    <picture>
-                        <source media="(min-width: 720px)" srcSet={standOutLarge} />
-                        <img src={standOutSmall} alt="Glass on a red background" />
-                    </picture>
-                    <Article type="usp" content={usps[1]} />
-                </section>
+                <ArticleWithImage
+                    image={images.transform}
+                    altText="Egg on a yellow background"
+                    content={usps[0]}
+                />
+                <ArticleWithImage
+                    image={images.standOut}
+                    altText="Glass on a red background"
+                    content={usps[1]}
+                />
             </section>
             <section className="text-inside">
-                <section>
-                    <picture>
-                        <source media="(min-width: 720px)" srcSet={designLarge} />
-                        <img src={designSmall} alt="Cherries on a mint background" />
-                    </picture>
-                    <Article type="usp" content={usps[2]} />
-                </section>
-                <section>
-                    <picture>
-                        <source media="(min-width: 720px)" srcSet={photographyLarge} />
-                        <img src={photographySmall} alt="Orange on a blue background" />
-                    </picture>
-                    <Article type="usp" content={usps[3]} />
-                </section>
+                <ArticleWithImage
+                    image={images.design}
+                    altText="Cherries on a mint background"
+                    content={usps[2]}
+                />
+                <ArticleWithImage
+                    image={images.photography}
+                    altText="Orange on a blue background"
+                    content={usps[3]}
+                />
             </section>
         </section>
     );

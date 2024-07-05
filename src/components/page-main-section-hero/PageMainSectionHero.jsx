@@ -8,11 +8,14 @@ function PageMainSectionHero() {
     return (
         <section className="hero">
             <header>
-            <h1 className="heading-xl">
-                We are creatives
-            </h1>
+                <h1 className="heading-xl">
+                    We are creatives
+                </h1>
             </header>
-            <img src={arrow} alt="Arrow" />
+            <img
+                src={arrow}
+                alt="Arrow"
+            />
         </section>
     );
 }

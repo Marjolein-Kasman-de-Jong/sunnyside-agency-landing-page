@@ -1,0 +1,43 @@
+/* ----------------------------------------------------------------------
+1. ArticleWithImage component images
+2. ArticleWithImage component in text-outside section
+3. ArticleWithImage component in text-inside section
+---------------------------------------------------------------------- */
+
+/* 1. ArticleWithImages component images */
+
+.usps section section img {
+    width: 100%;
+    display: block;
+}
+
+/* 2. ArticleWithImage component in text-outside section */
+
+@media screen and (min-width: 1440px) {
+    .usps .text-outside section {
+        display: flex;
+    }
+
+    .usps .text-outside section:nth-of-type(1) {
+        flex-direction: row-reverse;
+    }
+
+    .usps .text-outside section > * {
+        width: 50%;
+    }
+}
+
+/* 3. ArticleWithImage component in text-inside section */
+
+.usps .text-inside section {
+    position: relative;
+}
+
+@media screen and (min-width: 1440px) {
+    .usps .text-inside section {
+        width: 50%;
+    }
+}
+
+
+

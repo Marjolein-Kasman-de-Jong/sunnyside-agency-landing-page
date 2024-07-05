@@ -26,7 +26,12 @@ function Article({ type, content }) {
                 // Usp footer
                 link &&
                 <footer>
-                    <a href="#" className={`link-main-${link}`}>learn more</a>
+                    <a 
+                        href="#" 
+                        className={`link-main-${link}`}
+                    >
+                        learn more
+                    </a>
                 </footer>
             }
         </article>

@@ -1,11 +1,15 @@
-/* Section */
+/* ----------------------------------------------------------------------
+1. Hero section
+2. Hero section heading
+3. Hero section image
+---------------------------------------------------------------------- */
+
+/* 1. Hero section */
 
 .hero {
     width: 100%;
     aspect-ratio: 375 / 538;
-    background-image: url("../../assets/mobile/image-header.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
+    background: url("../../assets/mobile/image-header.jpg") no-repeat center/contain;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +22,7 @@
     }
 }
 
-/* Heading */
+/* 2. Hero section heading */
 
 .hero header {
     margin-top: 144px;
@@ -30,7 +34,7 @@
     }
 }
 
-/* Image */
+/* 3. Hero section image */
 
 .hero img {
     margin-top: 52px;
