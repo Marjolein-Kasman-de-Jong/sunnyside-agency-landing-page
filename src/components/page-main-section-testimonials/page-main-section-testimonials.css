@@ -1,0 +1,47 @@
+/* ----------------------------------------------------------------------
+1. Testimonials section
+2. Testimonials container
+---------------------------------------------------------------------- */
+
+/* 1. Testimonials section */
+
+.testimonials {
+    padding: 64px 0 86px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+@media screen and (min-width: 720px) {
+    .testimonials {
+        gap: 72.5px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .testimonials {
+        padding: 160px 0;
+        gap: 81px;
+    }
+}
+
+/* 2. Testimonials container */
+
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 64px;
+}
+
+@media screen and (min-width: 720px) {
+    .testimonials-container {
+        gap: 17px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .testimonials-container {
+        gap: 30px;
+    }
+}
