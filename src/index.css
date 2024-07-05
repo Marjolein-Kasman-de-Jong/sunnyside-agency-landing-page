@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------
-1. CSS reset
+1. CSS Reset
 2. Colors
 3. Typography
    3.1 Headings
@@ -12,7 +12,7 @@
 4. Background
 ---------------------------------------------------------------------- */
 
-/* 1. CSS reset */
+/* 1. CSS Reset */
 
 * {
     margin: 0;
@@ -37,9 +37,6 @@ button {
     --dark-grayish-blue: hsl(232, 10%, 55%);
     --grayish-blue: hsl(210, 4%, 67%);
     --white: hsl(0, 0%, 100%);
-    /* to be removed later */
-    --test: #19536C;
-
 }
 
 /* 3. Typography */
@@ -65,7 +62,6 @@ html {
     text-transform: uppercase;
 }
 
-/* 720px overgeslagen omdat de titel anders niet op een tablet past */
 @media screen and (min-width: 1440px) {
     .heading-xl {
         font-size: 3.5rem;
@@ -174,7 +170,6 @@ html {
     letter-spacing: -0.00894rem;
 }
 
-/* 720px overgeslagen omdat de header anders niet op een tablet past */
 @media screen and (min-width: 1440px) {
     .link-header {
         color: var(--white);
@@ -192,7 +187,6 @@ html {
     text-transform: uppercase;
 }
 
-/* 720px overgeslagen omdat de header anders niet op een tablet past */
 @media screen and (min-width: 1440px) {
     .link-header-button:hover {
         color: var(--white);
@@ -217,7 +211,7 @@ html {
     width: 137px;
     height: 10px;
     border-radius: 28px;
-    opacity: .25;
+    opacity: 0.25;
     display: block;
     position: absolute;
     bottom: 12px;
@@ -236,16 +230,13 @@ html {
 
 /* 3.3.2.1 Pseudo-classes */
 
-[class^="link-main"]:focus::after {
-    opacity: .25;
+[class^="link-main"]:focus::after,
+[class^="link-main"]:active::after {
+    opacity: 0.25;
 }
 
 [class^="link-main"]:hover::after {
     opacity: 1;
-}
-
-[class^="link-main"]:active::after {
-    opacity: .25;
 }
 
 /* 3.3.3 Footer */
