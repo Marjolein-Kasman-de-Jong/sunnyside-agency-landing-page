@@ -1,0 +1,28 @@
+/* ----------------------------------------------------------------------
+1. Grid container
+2. Grid items
+---------------------------------------------------------------------- */
+
+/* 1. Grid container */
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (min-width: 1440px) {
+    .images {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 2. Grid items */
+
+.images picture {
+    width: 100%;
+}
+
+.images img {
+    width: 100%;
+    display: block;
+}

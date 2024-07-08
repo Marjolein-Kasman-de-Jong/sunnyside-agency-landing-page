@@ -1,10 +1,26 @@
+// Constants
+import images from "../../constants/images";
+
 // Styles
 import "./page-main-section-images.css";
 
 function PageMainSectionImages() {
     return (
         <section className="images">
-            - images section
+            {
+                images.map(({ small, large, alt }) => {
+                    return  <picture key={alt}>
+                                <source 
+                                    media="(min-width: 720px )" 
+                                    srcSet={large} 
+                                />
+                                <img 
+                                    src={small} 
+                                    alt={alt} 
+                                />
+                            </picture>
+                })
+            }
         </section>
     );
 }
