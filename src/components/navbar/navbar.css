@@ -11,12 +11,16 @@
 /* Page header navbar */
 
 .page-header nav {
-    width: 87.73%;
+    display: none;
+}
+
+.page-header nav.active {
+    width: 100%;
     padding: 39px 0;
+    display: unset;
     position: absolute;
     top: 106px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0;
     background-color: var(--almost-white);
 }
 

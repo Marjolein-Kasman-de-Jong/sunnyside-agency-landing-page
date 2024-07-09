@@ -1,0 +1,9 @@
+@media screen and (min-width: 1440px) {
+    .icon-hamburger {
+        display: none;
+    }
+}
+
+.icon-hamburger.fade {
+    opacity: 0.5;
+}

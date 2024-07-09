@@ -1,9 +1,9 @@
 // Styles
 import "./navbar.css";
 
-function Navbar({ type }) {
+function Navbar({ type, isActive }) {
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${isActive ? "active" : ""}`}>
             <ul>
                 <li className={type}>
                     about
