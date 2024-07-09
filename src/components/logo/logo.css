@@ -1,0 +1,10 @@
+/* Page footer logo */
+
+.page-footer .logo {
+    display: block;
+    margin-left: 46.36px;
+}
+
+.page-footer .logo path {
+    fill: var(--moderate-cyan);
+}

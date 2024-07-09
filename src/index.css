@@ -177,7 +177,7 @@ html {
 [class^="link"] {
     font-style: normal;
     line-height: 1.5625rem;
-    padding: 5px 15px 15px 15px;
+    /* padding: 5px 15px 15px 15px; */
 }
 
 @media screen and (min-width: 1440px) {
@@ -222,6 +222,7 @@ html {
 /* 3.3.2 Links in page main */
 
 [class^="link-main"] {
+    padding: 5px 15px 15px 15px;
     color: var(--very-dark-desaturated-blue);
     font-family: "Fraunces", serif;
     font-size: 0.9375rem;

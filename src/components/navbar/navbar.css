@@ -1,3 +1,39 @@
+/* Navbar */
+
 .navbar li {
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-transform: capitalize;
+}
+
+/* Page header navbar */
+
+.page-header nav {
+    width: 34.54%;
+    display: flex;
+    align-items: center;
+}
+
+.page-header nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+/* Page footer navbar */
+
+.page-footer nav {
+    width: 79.2%;
+    max-width: 300px;
+    margin: 40px auto 0 auto;
+}
+
+.page-footer nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
 }

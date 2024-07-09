@@ -1,0 +1,19 @@
+/* Social links container */
+
+.social-links {
+    width: 43.73%;
+    max-width: 164px;
+    margin-top: 88px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Social links */
+
+.social-links svg:hover {
+    cursor: pointer;
+}
+
+.social-links svg:hover path {
+    fill: var(--white);
+}
