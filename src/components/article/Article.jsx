@@ -4,6 +4,11 @@ import "./article.css";
 function Article({ type, content }) {
     const { title, text, link, avatar, author, jobDescription } = content;
 
+    // Prevent default behavior because links have no target
+    function preventDefaultBehavior(e) {
+        e.preventDefault();
+    }
+
     return (
         <article className={type}>
             <header>
@@ -42,8 +47,9 @@ function Article({ type, content }) {
                 link &&
                 <footer>
                     <a 
-                        href="#" 
+                        href="" 
                         className={`link-main-${link}`}
+                        onClick={(e) => preventDefaultBehavior(e)}
                     >
                         learn more
                     </a>
