@@ -1,0 +1,19 @@
+button {
+    width: 140px;
+    height: 56px;
+    border: none;
+    border-radius: 28px;
+    background-color: var(--yellow);
+}
+
+@media screen and (min-width: 1440px) {
+    button {
+        background-color: var(--white);
+    }
+
+    button:hover {
+        background-color: var(--transparent-white);
+    }
+
+}
+

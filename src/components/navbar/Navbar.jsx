@@ -1,5 +1,6 @@
 // Components
 import ClickOutsideWrapper from "../click-outside-wrapper/ClickOutsideWrapper";
+import Button from "../button/Button";
 
 // Styles
 import "./navbar.css";
@@ -23,7 +24,7 @@ function Navbar({ type, windowWidth, isActive, onOutsideClick }) {
             {
                 type === "link-header" &&
                 <li>
-                    contact
+                    <Button buttonText="contact" />
                 </li>
             }
         </ul>

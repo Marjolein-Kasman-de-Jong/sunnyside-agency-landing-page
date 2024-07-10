@@ -47,6 +47,10 @@
     right: 0;
 }
 
+.page-header nav li {
+    height: 100%;
+}
+
 @media screen and (min-width: 1440px) {
     .page-header nav {
         display: flex;
@@ -60,7 +64,7 @@
     
     .page-header nav ul {
         flex-direction: row;
-        justify-content: space-between;
+        align-items: center;
         gap: 47px;
         background-color: transparent;
     }
