@@ -16,11 +16,11 @@ function ClickOutsideWrapper({ onOutsideClick, children }) {
         }
 
         // Add event listener to document
-        document.addEventListener('touchstart', handleClickOutside);    // for mobile
+        document.addEventListener('touchstart', handleClickOutside);   
 
         // Clean up event listener on component unmount
         return () => {
-            document.removeEventListener('touchstart', handleClickOutside); // for mobile
+            document.removeEventListener('touchstart', handleClickOutside);
         };
     }, [onOutsideClick]);
 
