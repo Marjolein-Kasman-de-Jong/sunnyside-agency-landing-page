@@ -1,6 +1,6 @@
 .page-header {
-        width: 87.73%;
-        height: 82px;
+        width: 87.2%;
+        padding: 32px 0 0 0;
         position: absolute;
         top: 0;
         left: 50%;
@@ -10,11 +10,12 @@
         align-items: center;
 }
 
-
-
 @media screen and (min-width: 1440px) {
     .page-header {
-        padding: 34px 44px 0 44px;
-        
+        width: 93.89%;
+        /* height: 82px; */
+        padding: 34px 0 0 0;
+        display: flex;
+        align-items: center;
     }
 }

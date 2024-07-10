@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Components
 import Logo from "../logo/Logo";
@@ -9,19 +9,52 @@ import IconHamburger from "../icon-hamburger/IconHamburger";
 import "./page-header.css";
 
 function PageHeader() {
-    // Monitor dropdown menu state
-    const [isActive, toggleIsActive] = useState(false);
-
+    const [isActive, toggleIsActive] = useState(false);                 // Dropdown menu state
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);  // Window width state
+    
     // Handle hamburger menu click
     function handleClick() {
-        isActive ? toggleIsActive(false) : toggleIsActive(true);
+        toggleIsActive(!isActive);
     }
+
+    // Monitor window width
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        }
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        }
+    }, [])
+
+    // Always show navbar on large screens
+    useEffect(() => {
+        const alwaysShowNavbarOnLargeScreens = () => {
+            windowWidth >= 1440 && toggleIsActive(true);
+        }
+
+        alwaysShowNavbarOnLargeScreens();
+    }, [windowWidth])
 
     return (
         <header className="page-header">
             <Logo />
-            <Navbar type="link-header" isActive={isActive} />
-            <IconHamburger onClick={handleClick} isActive={isActive} />
+            {
+                isActive &&
+                <Navbar
+                    type="link-header"
+                    windowWidth={windowWidth}
+                    isActive={isActive}
+                    onOutsideClick={handleClick}
+                />
+            }
+            <IconHamburger
+                onClick={handleClick}
+                isActive={isActive}
+            />
         </header>
     );
 }

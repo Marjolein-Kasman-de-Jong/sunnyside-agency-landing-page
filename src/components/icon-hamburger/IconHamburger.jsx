@@ -4,7 +4,8 @@ import "./icon-hamburger.css";
 function IconHamburger({ onClick, isActive }) {
     return (
         <svg
-        className={`icon-hamburger ${isActive ? "fade" : ""}`}
+            className={`icon-hamburger ${isActive ? "fade" : ""}`}
+            id="hamburger-menu"
             width="24"
             height="18"
             xmlns="http://www.w3.org/2000/svg"

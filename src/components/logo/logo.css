@@ -1,8 +1,26 @@
-/* Page footer logo */
+/* ----------------------------------------------------------------------
+1. Logo in page header
+2. 2. Logo in page footer
+---------------------------------------------------------------------- */
+
+/* 1. Logo in page header */
+
+.page-header .logo {
+    width: 123.636px;
+    height: auto;
+}
+
+@media screen and (min-width: 1440px) {
+    .page-header .logo {
+        width: 170px;
+    }
+}
+
+/* 2. Logo in page footer */
 
 .page-footer .logo {
-    display: block;
-    margin-left: 46.36px;
+    width: 170px;
+    height: auto;
 }
 
 .page-footer .logo path {

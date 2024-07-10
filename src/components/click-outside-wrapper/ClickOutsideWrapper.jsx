@@ -1,0 +1,30 @@
+import { useEffect, useRef } from "react";
+
+function ClickOutsideWrapper({ onOutsideClick, children }) {
+    // Create ref  
+    const ref = useRef(null);
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            // Check if click was outside ref element and not on hamburger menu, and call onOutsideClick()
+            if (ref.current && !ref.current.contains(event.target)) {
+                const hamburgerMenu = document.getElementById('hamburger-menu');
+                if (hamburgerMenu && !hamburgerMenu.contains(event.target)) {
+                    onOutsideClick();
+                } 
+            }
+        }
+
+        // Add event listener to document
+        document.addEventListener('touchstart', handleClickOutside);    // for mobile
+
+        // Clean up event listener on component unmount
+        return () => {
+            document.removeEventListener('touchstart', handleClickOutside); // for mobile
+        };
+    }, [onOutsideClick]);
+
+    return <div ref={ref}>{children}</div>;
+}
+
+export default ClickOutsideWrapper;

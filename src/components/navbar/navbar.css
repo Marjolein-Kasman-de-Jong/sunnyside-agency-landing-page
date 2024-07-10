@@ -1,4 +1,10 @@
-/* Navbar */
+/* ----------------------------------------------------------------------
+1. Navbar items
+2. Navbar in page header
+3. Navbar in page footer
+---------------------------------------------------------------------- */
+
+/* 1. Navbar items */
 
 .navbar li {
     height: 25px;
@@ -8,34 +14,20 @@
     text-transform: capitalize;
 }
 
-/* Page header navbar */
+/* 2. Navbar in page header */
 
 .page-header nav {
     display: none;
 }
 
 .page-header nav.active {
+    display: block;
     width: 100%;
     padding: 39px 0;
-    display: unset;
     position: absolute;
     top: 106px;
     right: 0;
     background-color: var(--almost-white);
-}
-
-@media screen and (min-width: 1440px) {
-    .page-header nav {
-        width: 34.54%;
-        padding: unset;
-        position: relative;
-        top: unset;
-        left: unset;
-        transform: unset;
-        display: flex;
-        align-items: center;
-        background-color: unset;
-    }
 }
 
 .page-header nav ul {
@@ -45,43 +37,50 @@
     gap: 32px;
 }
 
-@media screen and (min-width: 1440px) {
-    .page-header nav ul {
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
-        background-color: none;
-    }
-}
-
 .page-header nav::before {
     content: "";
-    border-top: 12px solid transparent;
-    border-right: 12px solid var(--almost-white);
-    border-bottom: 12px solid var(--almost-white);
-    border-left: 12px solid transparent;
+    border: 12px solid transparent;
+    border-bottom-color: var(--almost-white);
+    border-right-color: var(--almost-white);
     position: absolute;
     top: -24px;
     right: 0;
 }
 
 @media screen and (min-width: 1440px) {
+    .page-header nav {
+        display: flex;
+        padding: 0;
+        position: relative;
+        top: auto;
+        right: auto;
+        background-color: transparent;
+        align-items: center;
+    }
+    
+    .page-header nav ul {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 47px;
+        background-color: transparent;
+    }
+    
     .page-header nav::before {
         display: none;
     }
 }
 
-/* Page footer navbar */
+/* 3. Navbar in page footer */
 
 .page-footer nav {
     width: 79.2%;
     max-width: 300px;
-    margin: 40px auto 0 auto;
+    margin: 40px auto 0;
 }
 
 .page-footer nav ul {
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    width: 100%;
     list-style-type: none;
 }

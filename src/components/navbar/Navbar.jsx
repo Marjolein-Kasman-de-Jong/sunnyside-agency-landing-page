@@ -1,27 +1,37 @@
+// Components
+import ClickOutsideWrapper from "../click-outside-wrapper/ClickOutsideWrapper";
+
 // Styles
 import "./navbar.css";
 
-function Navbar({ type, isActive }) {
+function Navbar({ type, windowWidth, isActive, onOutsideClick}) {
+
+    if (!isActive) {
+        return null;
+    }
+
     return (
-        <nav className={`navbar ${isActive ? "active" : ""}`}>
-            <ul>
-                <li className={type}>
-                    about
-                </li>
-                <li className={type}>
-                    services
-                </li>
-                <li className={type}>
-                    projects
-                </li>
-                {
-                    type === "link-header" &&
-                    <li>
-                        contact
+        <ClickOutsideWrapper onOutsideClick={onOutsideClick}>
+            <nav className={`navbar ${windowWidth < 1440 && isActive ? "active" : ""}`}>
+                <ul>
+                    <li className={type}>
+                        about
                     </li>
-                }
-            </ul>
-        </nav>
+                    <li className={type}>
+                        services
+                    </li>
+                    <li className={type}>
+                        projects
+                    </li>
+                    {
+                        type === "link-header" &&
+                        <li>
+                            contact
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </ClickOutsideWrapper>
     );
 }
 
