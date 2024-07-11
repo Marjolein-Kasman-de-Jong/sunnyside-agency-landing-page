@@ -7,7 +7,6 @@
 /* 1. Navbar items */
 
 .navbar li {
-    height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,6 +21,7 @@
 
 .page-header nav.active {
     display: block;
+    opacity: 0;
     width: 100%;
     padding: 39px 0;
     position: absolute;
@@ -87,4 +87,16 @@
     justify-content: space-between;
     width: 100%;
     list-style-type: none;
+}
+
+
+
+@keyframes opacity-transition {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

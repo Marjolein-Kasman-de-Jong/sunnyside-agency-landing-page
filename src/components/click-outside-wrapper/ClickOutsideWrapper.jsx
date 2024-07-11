@@ -24,7 +24,7 @@ function ClickOutsideWrapper({ onOutsideClick, children }) {
         };
     }, [onOutsideClick]);
 
-    return <div ref={ref}>{children}</div>;
+    return <div className="click-outside-wrapper" ref={ref}>{children}</div>;
 }
 
 export default ClickOutsideWrapper;

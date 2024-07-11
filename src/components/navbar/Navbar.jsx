@@ -33,7 +33,7 @@ function Navbar({ type, windowWidth, isActive, onOutsideClick }) {
     if (type === "link-header") {
         return (
             <ClickOutsideWrapper onOutsideClick={onOutsideClick}>
-                <nav className={`navbar ${windowWidth < 1440 && isActive ? "active" : ""}`}>
+                <nav className={`navbar ${windowWidth < 1440 && isActive ? "active" : ""}`} id="navbar">
                     {navContent}
                 </nav>
             </ClickOutsideWrapper>

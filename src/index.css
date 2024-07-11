@@ -179,7 +179,6 @@ html {
 [class^="link"] {
     font-style: normal;
     line-height: 1.5625rem;
-    /* padding: 5px 15px 15px 15px; */
 }
 
 @media screen and (min-width: 1440px) {
@@ -262,16 +261,19 @@ html {
 [class^="link-main"]:focus::after,
 [class^="link-main"]:active::after {
     opacity: 0.25;
+    transition: opacity 500ms ease;
 }
 
 [class^="link-main"]:hover::after {
     opacity: 1;
+    transition: opacity 500ms ease;
 }
 
 /* 3.3.3 Links in page footer */
 
 .link-footer {
     color: var(--dark-moderate-cyan);
+    transition: color 500ms ease;
     font-family: "Barlow", sans-serif;
     font-size: 1.125rem;
     font-weight: 600;
@@ -281,6 +283,7 @@ html {
 @media screen and (min-width: 1440px) {
     .link-footer:hover {
         color: var(--white);
+        transition: color 500ms ease;
     }
 }
 

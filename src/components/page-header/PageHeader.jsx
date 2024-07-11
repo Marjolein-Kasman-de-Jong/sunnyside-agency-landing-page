@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+// Hooks
+import useFadeIn from "../../hooks/useFadeIn";
+
 // Components
 import Logo from "../logo/Logo";
 import Navbar from "../navbar/Navbar";
@@ -38,6 +41,35 @@ function PageHeader() {
 
         alwaysShowNavbarOnLargeScreens();
     }, [windowWidth])
+
+
+    // Animation
+    // useEffect(() => {
+    //     if (isActive) {
+    //         const navbar = document.getElementById("navbar");
+    //         let opacity = 0;
+    //         const duration = 500; 
+    //         const interval = 10; 
+    //         const increment = interval / duration;
+
+    //         function changeOpacity() {
+    //             opacity += increment;
+    //             if (opacity >= 1) {
+    //                 opacity = 1;
+    //                 clearInterval(fadeEffect);
+    //             }
+    //             navbar.style.opacity = opacity;
+    //         }
+
+    //         const fadeEffect = setInterval(() => {
+    //             requestAnimationFrame(changeOpacity);
+    //         }, interval);
+
+    //         return () => clearInterval(fadeEffect);
+    //     }
+    // }, [isActive]);
+
+    useFadeIn(isActive, windowWidth);
 
     return (
         <header className="page-header">

@@ -9,10 +9,12 @@ button {
 @media screen and (min-width: 1440px) {
     button {
         background-color: var(--white);
+        transition: background-color 500ms ease;
     }
 
     button:hover {
         background-color: var(--transparent-white);
+        transition: background-color 500ms ease;
     }
 
 }
