@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const useFadeIn = (isActive, windowWidth) => {
     useEffect(() => {
@@ -9,6 +9,7 @@ const useFadeIn = (isActive, windowWidth) => {
             const interval = 10; 
             const increment = interval / duration;
 
+            // Change opacity
             function changeOpacity() {
                 opacity += increment;
                 if (opacity >= 1) {
@@ -18,6 +19,7 @@ const useFadeIn = (isActive, windowWidth) => {
                 navbar.style.opacity = opacity;
             }
 
+            // Set interval to change opacity
             const fadeEffect = setInterval(() => {
                 requestAnimationFrame(changeOpacity);
             }, interval);

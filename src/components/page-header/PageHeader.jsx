@@ -14,7 +14,7 @@ import "./page-header.css";
 function PageHeader() {
     const [isActive, toggleIsActive] = useState(false);                 // Dropdown menu state
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);  // Window width state
-    
+
     // Handle hamburger menu click
     function handleClick() {
         toggleIsActive(!isActive);
@@ -42,34 +42,8 @@ function PageHeader() {
         alwaysShowNavbarOnLargeScreens();
     }, [windowWidth])
 
-
-    // Animation
-    // useEffect(() => {
-    //     if (isActive) {
-    //         const navbar = document.getElementById("navbar");
-    //         let opacity = 0;
-    //         const duration = 500; 
-    //         const interval = 10; 
-    //         const increment = interval / duration;
-
-    //         function changeOpacity() {
-    //             opacity += increment;
-    //             if (opacity >= 1) {
-    //                 opacity = 1;
-    //                 clearInterval(fadeEffect);
-    //             }
-    //             navbar.style.opacity = opacity;
-    //         }
-
-    //         const fadeEffect = setInterval(() => {
-    //             requestAnimationFrame(changeOpacity);
-    //         }, interval);
-
-    //         return () => clearInterval(fadeEffect);
-    //     }
-    // }, [isActive]);
-
-    useFadeIn(isActive, windowWidth);
+    // Apply fade effect to navbar on small screens (needed because CSS display property can't be animated)
+    useFadeIn(isActive, windowWidth);   
 
     return (
         <header className="page-header">
