@@ -4,7 +4,7 @@ import Article from "../article/Article";
 // Styles
 import "./article-with-image.css";
 
-const ArticleWithImage = ({ image, altText, content }) => (
+const ArticleWithImage = ({ image, altText, content, number }) => (
     <section>
         <picture>
             <source
@@ -19,6 +19,7 @@ const ArticleWithImage = ({ image, altText, content }) => (
         <Article
             type="usp"
             content={content}
+            number={number}
         />
     </section>
 );

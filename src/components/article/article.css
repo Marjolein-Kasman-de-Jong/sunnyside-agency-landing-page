@@ -7,6 +7,8 @@
 4. Article component in testimonials section
    4.1 Article component in testimonials section avatar
    4.2 Article component in testimonials section footer
+5. Animations
+    5.1 Slide-in
 ---------------------------------------------------------------------- */
 
 /* 1. Article component in usps section */
@@ -131,5 +133,96 @@
 @media screen and (min-width: 1440px) {
     .testimonial footer {
         margin-top: 11px;
+    }
+}
+
+/* 5. Animations */
+
+/* 5.1 Slide-in */
+
+.usp p.odd {
+    animation: slide-in-from-left ease;
+    animation-timeline: view();
+    animation-range-start: 0px;
+    animation-range-end: 50vh;
+}
+
+.usp p.even {
+    animation: slide-in-from-right ease;
+    animation-timeline: view();
+    animation-range-start: 0px;
+    animation-range-end: 50vh;
+}
+
+@keyframes slide-in-from-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.5;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes slide-in-from-right {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.5;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* 5.1 Change opacity */
+
+.testimonial {
+    animation: appear ease;
+    animation-timeline: view();
+    animation-range-start: 25px;
+    animation-range-end: 75vh;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.2;
+    }
+
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    @keyframes appear {
+        0% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+        }
     }
 }

@@ -44,11 +44,13 @@ function PageMainSectionUsps() {
                     image={images.transform}
                     altText="Egg on a yellow background"
                     content={usps[0]}
+                    number="odd"
                 />
                 <ArticleWithImage
                     image={images.standOut}
                     altText="Glass on a red background"
                     content={usps[1]}
+                    number="even"
                 />
             </section>
             <section className="text-inside">
@@ -56,11 +58,13 @@ function PageMainSectionUsps() {
                     image={images.design}
                     altText="Cherries on a mint background"
                     content={usps[2]}
+                    number="odd"
                 />
                 <ArticleWithImage
                     image={images.photography}
                     altText="Orange on a blue background"
                     content={usps[3]}
+                    number="even"
                 />
             </section>
         </section>

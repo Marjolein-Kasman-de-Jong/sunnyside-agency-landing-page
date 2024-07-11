@@ -1,4 +1,9 @@
-/* Social links container */
+/* ----------------------------------------------------------------------
+1. Social links container
+2. Social link icons 
+---------------------------------------------------------------------- */
+
+/* 1. Social links container */
 
 .social-links {
     width: 43.73%;
@@ -8,12 +13,20 @@
     justify-content: space-between;
 }
 
-/* Social links */
+/* 2. Social link icons */
 
 .social-links svg:hover {
     cursor: pointer;
 }
 
-.social-links svg:hover path {
-    fill: var(--white);
+.social-links svg path {
+    fill: var(--moderate-cyan);
+    transition: fill 500ms ease;
+}
+
+@media screen and (min-width: 1440px) {
+    .social-links svg:hover path {
+        fill: var(--white);
+        transition: fill 500ms ease;
+    }
 }

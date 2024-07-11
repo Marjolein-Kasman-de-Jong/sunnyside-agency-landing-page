@@ -1,7 +1,7 @@
 // Styles
 import "./article.css";
 
-function Article({ type, content }) {
+function Article({ type, content, number }) {
     const { title, text, link, avatar, author, jobDescription } = content;
 
     // Prevent default behavior because links have no target
@@ -31,7 +31,7 @@ function Article({ type, content }) {
             {
                 // Usp paragraph
                 type === "usp" &&
-                <p className={link ? "paragraph-usp-l" : "paragraph-usp-s"}>
+                <p className={(link ? "paragraph-usp-l" : "paragraph-usp-s") + " " + number}>
                     {text}
                 </p>
             }

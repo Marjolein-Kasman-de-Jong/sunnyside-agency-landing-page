@@ -181,7 +181,7 @@ html {
     line-height: 1.5625rem;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 720px) {
     [class^="link"]:hover {
         cursor: pointer;
     }
