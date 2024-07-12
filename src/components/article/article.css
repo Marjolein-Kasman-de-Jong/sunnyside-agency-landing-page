@@ -9,6 +9,7 @@
    4.2 Article component in testimonials section footer
 5. Animations
     5.1 Slide-in
+    5.2 Appear
 ---------------------------------------------------------------------- */
 
 /* 1. Article component in usps section */
@@ -141,17 +142,19 @@
 /* 5.1 Slide-in */
 
 .usp p.odd {
+    transform: translateX(-150%);
     animation: slide-in-from-left ease;
     animation-timeline: view();
     animation-range-start: 0px;
-    animation-range-end: 50vh;
+    animation-range-end: calc(100vh - 50px);
 }
 
 .usp p.even {
+    transform: translateX(150%);
     animation: slide-in-from-right ease;
     animation-timeline: view();
     animation-range-start: 0px;
-    animation-range-end: 50vh;
+    animation-range-end: calc(100vh -50px);
 }
 
 @keyframes slide-in-from-left {
@@ -161,8 +164,14 @@
         scale: 1;
     }
 
-    50% {
+    25% {
         scale: 1.5;
+    }
+
+    50% {
+        transform: translateX(0);
+        opacity: 1;
+        scale: 1;
     }
 
     100% {
@@ -179,8 +188,14 @@
         scale: 1;
     }
 
-    50% {
+    25% {
         scale: 1.5;
+    }
+
+    50% {
+        transform: translateX(0);
+        opacity: 1;
+        scale: 1;
     }
 
     100% {
@@ -190,7 +205,7 @@
     }
 }
 
-/* 5.1 Change opacity */
+/* 5.1 Appear */
 
 .testimonial {
     animation: appear ease;
