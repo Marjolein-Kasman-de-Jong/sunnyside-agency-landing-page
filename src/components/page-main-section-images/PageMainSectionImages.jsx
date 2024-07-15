@@ -4,25 +4,23 @@ import images from "../../constants/images";
 // Styles
 import "./page-main-section-images.css";
 
-function PageMainSectionImages() {
-    return (
-        <section className="images">
-            {
-                images.map(({ small, large, alt }) => {
-                    return  <picture key={alt}>
-                                <source 
-                                    media="(min-width: 720px )" 
-                                    srcSet={large} 
-                                />
-                                <img 
-                                    src={small} 
-                                    alt={alt} 
-                                />
-                            </picture>
-                })
-            }
-        </section>
-    );
-}
+const PageMainSectionImages = () => (
+    <section className="images">
+        {
+            images.map(({ small, large, alt }) => {
+                return <picture key={alt}>
+                    <source
+                        media="(min-width: 720px )"
+                        srcSet={large}
+                    />
+                    <img
+                        src={small}
+                        alt={alt}
+                    />
+                </picture>
+            })
+        }
+    </section>
+)
 
 export default PageMainSectionImages;

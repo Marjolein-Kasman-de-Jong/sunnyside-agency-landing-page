@@ -4,60 +4,58 @@ import "./article.css";
 function Article({ type, content, number }) {
     const { title, text, link, avatar, author, jobDescription } = content;
 
-    // Prevent default behavior because links have no target
-    function preventDefaultBehavior(e) {
+    const preventDefaultBehavior = (e) => {
         e.preventDefault();
-    }
+    };
 
-    return (
-        <article className={type}>
-            <header>
-                {
-                    // Usp header
-                    type === "usp" &&
-                    <h2 className={link ? "heading-l" : "heading-m"}>
-                        {title}
-                    </h2>
-                }
-                {
-                    // Testimonial header
-                    type === "testimonial" &&
-                    <img 
-                        src={avatar} 
-                        alt={author} 
-                    />
-                }
-            </header>
-            {
-                // Usp paragraph
-                type === "usp" &&
-                <p className={(link ? "paragraph-usp-l" : "paragraph-usp-s") + " " + number}>
-                    {text}
-                </p>
-            }
-            {
-                // Testimonial paragraph
-                type === "testimonial" &&
-                <p className="paragraph-testimonial">
-                    {text}
-                </p>
-            }
-            {
-                // Usp footer
-                link &&
+    const renderHeader = () => {
+        switch (type) {
+            case "usp":
+                return  <h2 className={link ? "heading-l" : "heading-m"}>
+                            {title}
+                        </h2>;
+            case "testimonial":
+                return  <img 
+                            src={avatar} 
+                            alt={author} 
+                        />;
+            default:
+                return null;
+        }
+    };
+
+    const renderParagraph = () => {
+        switch (type) {
+            case "usp":
+                return  <p className={`${link ? "paragraph-usp-l" : "paragraph-usp-s"} ${number}`}>
+                            {text}
+                        </p>;
+            case "testimonial":
+                return  <p className="paragraph-testimonial">
+                            {text}
+                        </p>;
+            default:
+                return null;
+        }
+    };
+
+    const renderFooter = () => {
+        if (link) {
+            return (
                 <footer>
                     <a 
                         href="" 
-                        className={`link-main-${link}`}
-                        onClick={(e) => preventDefaultBehavior(e)}
+                        className={`link-main-${link}`} 
+                        onClick={preventDefaultBehavior}
                     >
                         learn more
                     </a>
                 </footer>
-            }
-            {
-                // Testimonial footer
-                type === "testimonial" &&
+            );
+        }
+
+        if (type === "testimonial") {
+            return (
                 <footer>
                     <p className="paragraph-testimonial-author">
                         {author}
@@ -65,8 +63,20 @@ function Article({ type, content, number }) {
                     <p className="paragraph-testimonial-job-description">
                         {jobDescription}
                     </p>
-                </footer> 
-            }
+                </footer>
+            );
+        }
+
+        return null;
+    };
+
+    return (
+        <article className={type}>
+            <header>
+                {renderHeader()}
+            </header>
+            {renderParagraph()}
+            {renderFooter()}
         </article>
     );
 }

@@ -1,10 +1,8 @@
 /* ----------------------------------------------------------------------
-1. ArticleWithImage component images
-2. ArticleWithImage component in text-outside section
-3. ArticleWithImage component in text-inside section
+   ArticleWithImage Component Styles
 ---------------------------------------------------------------------- */
 
-/* 1. ArticleWithImages component images */
+/* 1. Images within ArticleWithImage component */
 
 .usps section section img {
     width: 100%;
@@ -38,6 +36,3 @@
         width: 50%;
     }
 }
-
-
-

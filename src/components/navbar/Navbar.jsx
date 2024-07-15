@@ -10,7 +10,7 @@ function Navbar({ type, windowWidth, isActive, onOutsideClick }) {
         return null;
     }
 
-    const navContent = (
+    const renderNavContent = () => (
         <ul>
             <li className={type}>
                 about
@@ -21,30 +21,32 @@ function Navbar({ type, windowWidth, isActive, onOutsideClick }) {
             <li className={type}>
                 projects
             </li>
-            {
-                type === "link-header" &&
+            {type === "link-header" && (
                 <li>
                     <Button buttonText="contact" />
                 </li>
-            }
+            )}
         </ul>
     );
 
-    if (type === "link-header") {
-        return (
-            <ClickOutsideWrapper onOutsideClick={onOutsideClick}>
-                <nav className={`navbar ${windowWidth < 1440 && isActive ? "active" : ""}`} id="navbar">
-                    {navContent}
-                </nav>
-            </ClickOutsideWrapper>
-        )
-    } else {
-        return (
-            <nav className="navbar">
-                {navContent}
+    const renderLinkHeaderNav = () => (
+        <ClickOutsideWrapper 
+            onOutsideClick={onOutsideClick} 
+            windowWidth={windowWidth}
+        >
+            <nav className={`navbar ${windowWidth < 1440 && isActive ? "active" : ""}`} id="navbar">
+                {renderNavContent()}
             </nav>
-        )
-    }
+        </ClickOutsideWrapper>
+    );
+
+    const renderDefaultNav = () => (
+        <nav className="navbar">
+            {renderNavContent()}
+        </nav>
+    );
+
+    return type === "link-header" ? renderLinkHeaderNav() : renderDefaultNav();
 }
 
 export default Navbar;

@@ -1,6 +1,5 @@
 /* ----------------------------------------------------------------------
-1. Social links container
-2. Social link icons 
+   Social Links Component Styles
 ---------------------------------------------------------------------- */
 
 /* 1. Social links container */
@@ -15,7 +14,7 @@
 
 /* 2. Social link icons */
 
-.social-links svg:hover {
+.social-links svg {
     cursor: pointer;
 }
 
@@ -24,9 +23,10 @@
     transition: fill 500ms ease;
 }
 
+/* 3. Social link icons - hover state for large screens */
+
 @media screen and (min-width: 1440px) {
     .social-links svg:hover path {
         fill: var(--white);
-        transition: fill 500ms ease;
     }
 }

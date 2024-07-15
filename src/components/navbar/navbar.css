@@ -1,7 +1,5 @@
 /* ----------------------------------------------------------------------
-1. Navbar items
-2. Navbar in page header
-3. Navbar in page footer
+   Navbar Component Styles
 ---------------------------------------------------------------------- */
 
 /* 1. Navbar items */
@@ -31,7 +29,7 @@
 }
 
 .page-header nav ul {
-    list-style-type: none;
+    list-style: none;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -86,16 +84,15 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    list-style-type: none;
+    list-style: none;
 }
 
-
+/* 4. Keyframes for opacity transition */
 
 @keyframes opacity-transition {
     0% {
         opacity: 0;
     }
-
     100% {
         opacity: 1;
     }

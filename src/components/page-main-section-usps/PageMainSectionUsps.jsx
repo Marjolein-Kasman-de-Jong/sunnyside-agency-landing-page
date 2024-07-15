@@ -36,8 +36,7 @@ const images = {
 // Styles
 import "./page-main-section-usps.css";
 
-function PageMainSectionUsps() {
-    return (
+const PageMainSectionUsps = () => (
         <section className="usps">
             <section className="text-outside">
                 <ArticleWithImage
@@ -68,7 +67,6 @@ function PageMainSectionUsps() {
                 />
             </section>
         </section>
-    );
-}
+    )
 
 export default PageMainSectionUsps;

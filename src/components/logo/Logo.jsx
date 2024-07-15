@@ -1,8 +1,7 @@
 // Styles
 import "./logo.css";
 
-function Logo() {
-    return (
+const Logo = () => (
         <svg className="logo"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 123.636 24" 
@@ -13,7 +12,6 @@ function Logo() {
                 fillRule="nonzero"
             />
         </svg>
-    );
-}
+)
 
 export default Logo;

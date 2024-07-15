@@ -1,3 +1,7 @@
+/* ----------------------------------------------------------------------
+   Button Component Styles
+---------------------------------------------------------------------- */
+
 button {
     width: 140px;
     height: 56px;
@@ -14,8 +18,5 @@ button {
 
     button:hover {
         background-color: var(--transparent-white);
-        transition: background-color 500ms ease;
     }
-
 }
-

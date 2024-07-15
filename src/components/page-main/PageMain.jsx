@@ -4,18 +4,14 @@ import PageMainSectionUsps from "../page-main-section-usps/PageMainSectionUsps";
 import PageMainSectionTestimonials from "../page-main-section-testimonials/PageMainSectionTestimonials";
 import PageMainSectionImages from "../page-main-section-images/PageMainSectionImages";
 
-// Styles
-import "./page-main.css";
+const PageMain = () => (
+    <main>
+        <PageMainSectionHero />
+        <PageMainSectionUsps />
+        <PageMainSectionTestimonials />
+        <PageMainSectionImages />
+    </main>
+)
 
-function PageMain() {
-    return (
-        <main>
-            <PageMainSectionHero />
-            <PageMainSectionUsps />
-            <PageMainSectionTestimonials />
-            <PageMainSectionImages />
-        </main>
-    );
-}
 
 export default PageMain;

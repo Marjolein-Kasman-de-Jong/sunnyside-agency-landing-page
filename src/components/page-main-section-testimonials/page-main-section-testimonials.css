@@ -1,12 +1,11 @@
 /* ----------------------------------------------------------------------
-1. Testimonials section
-2. Testimonials container
+   Image Section Component Styles
 ---------------------------------------------------------------------- */
 
 /* 1. Testimonials section */
 
 .testimonials {
-    padding: 64px 0 86px 0;
+    padding: 64px 0 86px;
     display: flex;
     flex-direction: column;
     gap: 64px;
@@ -32,6 +31,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 64px;
+    overflow: clip;
 }
 
 @media screen and (min-width: 720px) {

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 // Hooks
 import useFadeIn from "../../hooks/useFadeIn";
@@ -12,51 +12,43 @@ import IconHamburger from "../icon-hamburger/IconHamburger";
 import "./page-header.css";
 
 function PageHeader() {
-    const [isActive, toggleIsActive] = useState(false);                 // Dropdown menu state
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);  // Window width state
+    const [isActive, setIsActive] = useState(false);                 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-    // Handle hamburger menu click
-    function handleClick() {
-        toggleIsActive(!isActive);
-    }
+    const handleResize = useCallback(() => {
+        setWindowWidth(window.innerWidth);
+    }, []);
 
-    // Monitor window width
+    const handleClick = useCallback(() => {
+        setIsActive(prevIsActive => !prevIsActive);
+    }, []);
+
     useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        }
-
         window.addEventListener("resize", handleResize);
-
         return () => {
             window.removeEventListener("resize", handleResize);
-        }
-    }, [])
+        };
+    }, [handleResize]);
 
-    // Always show navbar on large screens
     useEffect(() => {
-        const alwaysShowNavbarOnLargeScreens = () => {
-            windowWidth >= 1440 && toggleIsActive(true);
+        if (windowWidth >= 1440) {
+            setIsActive(true);
         }
+    }, [windowWidth]);
 
-        alwaysShowNavbarOnLargeScreens();
-    }, [windowWidth])
-
-    // Apply fade effect to navbar on small screens (needed because CSS display property can't be animated)
-    useFadeIn(isActive, windowWidth);   
+    useFadeIn(isActive, windowWidth);
 
     return (
         <header className="page-header">
             <Logo />
-            {
-                isActive &&
+            {isActive && (
                 <Navbar
                     type="link-header"
                     windowWidth={windowWidth}
                     isActive={isActive}
                     onOutsideClick={handleClick}
                 />
-            }
+            )}
             <IconHamburger
                 onClick={handleClick}
                 isActive={isActive}
