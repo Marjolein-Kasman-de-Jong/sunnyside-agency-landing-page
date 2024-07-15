@@ -2,6 +2,10 @@
    Hamburger Icon Component Styles
 ---------------------------------------------------------------------- */
 
+.icon-hamburger {
+    cursor: pointer;
+}
+
 @media screen and (min-width: 1440px) {
     .icon-hamburger {
         display: none;
