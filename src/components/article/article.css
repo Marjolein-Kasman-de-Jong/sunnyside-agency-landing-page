@@ -124,7 +124,7 @@
 
 @media screen and (min-width: 1440px) {
     .testimonial footer {
-        margin-top: 11px;
+        margin-top: auto;
     }
 }
 
